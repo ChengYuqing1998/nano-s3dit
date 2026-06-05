@@ -15,10 +15,10 @@ from train import create_model, load_toml, model_time_from_sigma, resolve
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Inspect one checkpoint's flow prediction statistics.")
-    parser.add_argument("--config", default="configs/nano-s3dit-overfit-176m.toml")
+    parser.add_argument("--config", default="configs/nano-s3dit-overfit-178m.toml")
     parser.add_argument(
         "--checkpoint",
-        default="checkpoints/nano-s3dit-overfit-176m/checkpoint-002000.pt",
+        default="checkpoints/nano-s3dit-overfit-178m/checkpoint-002000.pt",
     )
     parser.add_argument("--sample-id", default="1")
     parser.add_argument("--sigma", type=float, default=0.5)

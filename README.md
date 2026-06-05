@@ -43,7 +43,7 @@ scripts/cache_text_embeddings.py             Cache Qwen caption embeddings
 scripts/cache_vae_latents.py                 Cache Z-Image VAE latents
 scripts/train.py                             Flow-matching training
 scripts/infer.py                             Euler flow inference
-configs/nano-s3dit-overfit-176m.toml         ~178M params, 2000 training steps
+configs/nano-s3dit-overfit-178m.toml         177,577,248 params (~178M), 2000 training steps
 data/overfit-emnist-byclass-one-per-class    52 jpg/txt samples
 cache/overfit-emnist-caption-embeds          Preprocessed Qwen embeddings
 cache/overfit-emnist-vae-latents             Preprocessed Z-Image VAE latents
@@ -84,13 +84,13 @@ hf auth login
 The bundled cache contains everything needed by the training loop:
 
 ```bash
-PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python scripts/train.py --config configs/nano-s3dit-overfit-176m.toml --device cuda
+PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python scripts/train.py --config configs/nano-s3dit-overfit-178m.toml --device cuda
 ```
 
 The default recipe trains for 2000 steps and writes:
 
 ```text
-checkpoints/nano-s3dit-overfit-176m/checkpoint-002000.pt
+checkpoints/nano-s3dit-overfit-178m/checkpoint-002000.pt
 ```
 
 Training does not load Qwen3-0.6B or the Z-Image VAE.
@@ -150,7 +150,7 @@ If you already have these two files, place them directly under `models/z-image-v
 Generate uppercase `A`:
 
 ```bash
-python scripts/infer.py --config configs/nano-s3dit-overfit-176m.toml --checkpoint checkpoints/nano-s3dit-overfit-176m/checkpoint-002000.pt --prompt "A" --height 128 --width 128 --steps 50 --guidance-scale 0.0 --seed 42 --output outputs/overfit-A-step2000.png
+python scripts/infer.py --config configs/nano-s3dit-overfit-178m.toml --checkpoint checkpoints/nano-s3dit-overfit-178m/checkpoint-002000.pt --prompt "A" --height 128 --width 128 --steps 50 --guidance-scale 0.0 --seed 42 --output outputs/overfit-A-step2000.png
 ```
 
 ## 5. Data Format

@@ -14,7 +14,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Sample a checkpoint from the Z-Image-like pretraining run.")
     parser.add_argument(
         "--config",
-        default="configs/nano-s3dit-overfit-176m.toml",
+        default="configs/nano-s3dit-overfit-178m.toml",
         help="Training config used to define the transformer shape and source paths.",
     )
     parser.add_argument(

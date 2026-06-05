@@ -20,7 +20,7 @@ from torch.utils.data import DataLoader, Dataset, Sampler
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Single-GPU Z-Image-like flow matching pretraining.")
-    parser.add_argument("--config", default="configs/nano-s3dit-overfit-176m.toml")
+    parser.add_argument("--config", default="configs/nano-s3dit-overfit-178m.toml")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--resume", default=None)

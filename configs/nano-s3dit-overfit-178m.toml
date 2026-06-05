@@ -1,6 +1,6 @@
 [paths]
 manifest = "cache/overfit-emnist-vae-latents/z-image-vae-128-bf16/manifest.jsonl"
-output_dir = "checkpoints/nano-s3dit-overfit-176m"
+output_dir = "checkpoints/nano-s3dit-overfit-178m"
 
 [model]
 dim = 736

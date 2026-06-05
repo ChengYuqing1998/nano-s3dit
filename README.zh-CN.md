@@ -43,7 +43,7 @@ scripts/cache_text_embeddings.py             缓存 Qwen caption embedding
 scripts/cache_vae_latents.py                 缓存 Z-Image VAE latent
 scripts/train.py                             flow matching 训练
 scripts/infer.py                             Euler flow 推理
-configs/nano-s3dit-overfit-176m.toml         约 178M 参数，训练 2000 step
+configs/nano-s3dit-overfit-178m.toml         177,577,248 参数（约 178M），训练 2000 step
 data/overfit-emnist-byclass-one-per-class    52 个 jpg/txt 样本
 cache/overfit-emnist-caption-embeds          已预处理的 Qwen embeddings
 cache/overfit-emnist-vae-latents             已预处理的 Z-Image VAE latents
@@ -84,13 +84,13 @@ hf auth login
 仓库内置的缓存已经包含训练所需的 caption embeddings 和 VAE latents，因此可以直接执行：
 
 ```bash
-PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python scripts/train.py --config configs/nano-s3dit-overfit-176m.toml --device cuda
+PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python scripts/train.py --config configs/nano-s3dit-overfit-178m.toml --device cuda
 ```
 
 默认训练 2000 step，checkpoint 输出到：
 
 ```text
-checkpoints/nano-s3dit-overfit-176m/checkpoint-002000.pt
+checkpoints/nano-s3dit-overfit-178m/checkpoint-002000.pt
 ```
 
 训练阶段不会加载 Qwen3-0.6B 或 Z-Image VAE。
@@ -150,7 +150,7 @@ cp models/z-image-download/vae/diffusion_pytorch_model.safetensors models/z-imag
 生成大写 `A`：
 
 ```bash
-python scripts/infer.py --config configs/nano-s3dit-overfit-176m.toml --checkpoint checkpoints/nano-s3dit-overfit-176m/checkpoint-002000.pt --prompt "A" --height 128 --width 128 --steps 50 --guidance-scale 0.0 --seed 42 --output outputs/overfit-A-step2000.png
+python scripts/infer.py --config configs/nano-s3dit-overfit-178m.toml --checkpoint checkpoints/nano-s3dit-overfit-178m/checkpoint-002000.pt --prompt "A" --height 128 --width 128 --steps 50 --guidance-scale 0.0 --seed 42 --output outputs/overfit-A-step2000.png
 ```
 
 ## 5. 数据格式
