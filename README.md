@@ -26,6 +26,15 @@ This project is not an official Z-Image implementation or an exact reproduction 
 
 **Z-Image links:** [GitHub](https://github.com/Tongyi-MAI/Z-Image) | [Hugging Face](https://huggingface.co/Tongyi-MAI/Z-Image) | [Paper](https://arxiv.org/abs/2511.22699)
 
+## Expected Result
+
+After the overfit recipe runs successfully, inference should produce a result similar to the example below. The small image is the original 28x28 EMNIST training sample for the prompt `J`; the larger image is the 128x128 result generated from the checkpoint at step 8000 with seed 42.
+
+| Original training sample | Generated result |
+|:---:|:---:|
+| <img src="assets/examples/emnist-j-reference.jpg" alt="Original EMNIST J training sample" width="112"> | <img src="assets/examples/emnist-j-step8000-seed42.png" alt="Generated J at step 8000 with seed 42" width="256"> |
+| Prompt: `J`, 28x28 | Step 8000, seed 42, 128x128 |
+
 ## Contents
 
 ```text
